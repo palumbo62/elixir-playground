@@ -1,0 +1,75 @@
+{
+    "name": "durangler-dev",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "durangler",
+    "runServices": [
+        "durangler",
+        "db"
+    ],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "sudo chown -R vscode:vscode /workspace/_build /workspace/deps",
+    "extensions": [
+        // Elixir
+        "jakebecker.elixir-ls",
+        "benvp.vscode-hex-pm-intellisense",
+        "iampeterbanjo.elixirlinter",
+        // General backend
+        "mohsen1.prettify-json",
+        "bajdzis.vscode-database", // Supports connections to mysql or postgres, over SSL, socked
+        "redhat.vscode-yaml", // Kubernetes and Kedge syntax support
+        "mikestead.dotenv", // support for .env files
+        // Console
+        "IBM.output-colorizer",
+        // Git
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        // Other linters
+        "davidanson.vscode-markdownlint",
+        "ms-azuretools.vscode-docker",
+        // Other helpers
+        "shardulm94.trailing-spaces",
+        "Gruntfuggly.todo-tree",
+        "bierner.emojisense",
+        "stkb.rewrap", // rewrap comments after n characters on one line
+        // Other
+        "jrebocho.vscode-random", // generate random values
+        "alefragnani.Bookmarks",
+        "quicktype.quicktype", // Paste JSON as code
+        "spikespaz.vscode-smoothtype", // smooth cursor animation
+        "vscode-icons-team.vscode-icons",
+        "pnp.polacode", // Polaroid for your code
+        "mutantdino.resourcemonitor", // resource monitor
+        "formulahendry.auto-close-tag", //auto-close tags
+    ],
+    "settings": {
+        // General settings
+        "files.eol": "\n",
+        // Docker
+        "remote.extensionKind": {
+            "ms-azuretools.vscode-docker": "workspace"
+        },
+        // Based on Elixir formatter's style
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
+        "editor.formatOnType": true,
+        // Misc
+        "editor.wordBasedSuggestions": false,
+        "editor.trimAutoWhitespace": false,
+        // See below
+        "editor.acceptSuggestionOnEnter": "off",
+        // Elixir live view files association
+        "files.associations": {
+            "*.html.leex": "html-eex"
+        },
+        "emmet.includeLanguages": {
+            "html-eex": "html"
+        },
+        "elixirLinter.useStrict": false
+    }
+}

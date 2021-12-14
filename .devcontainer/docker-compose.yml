@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  exercise:
+    image: papereira/devcontainer-elixir-phoenix:1.5.9-alpine
+    volumes:
+      - ../:/workspace
+      - ~/.ssh:/home/vscode/.ssh:ro
+      - ~/.ssh:/root/.ssh:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      # don't use these as sub directories from the mounted volume
+      - /workspace/_build
+      - /workspace/deps
+    environment:
+      # replace with your timezone
+      - TZ=Europe/Lisbon
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: zsh -c "while sleep 1000; do :; done"
+    ports:
+      - 4000:4000
+    networks:
+      - default
+  db:
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PSQL_TRUST_LOCALNET: 'true'
+      ENCODING: UTF8
+    image: postgres:11.9
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "postgres", "-U", "postgres"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    ports:
+      - 5432:5432
+    networks:
+      - default
