@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  exercise:
+  durangler:
     image: papereira/devcontainer-elixir-phoenix:1.5.9-alpine
     volumes:
       - ../:/workspace
@@ -32,7 +32,15 @@ services:
       ENCODING: UTF8
     image: postgres:11.9
     healthcheck:
-      test: ["CMD", "pg_isready", "-d", "postgres", "-U", "postgres"]
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-d",
+          "postgres",
+          "-U",
+          "postgres"
+        ]
       interval: 10s
       timeout: 3s
       retries: 10

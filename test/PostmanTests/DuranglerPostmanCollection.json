@@ -940,12 +940,12 @@
 			"name": "Employess",
 			"item": [
 				{
-					"name": "Get List of Employees",
+					"name": "Get List of Offenders",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -953,14 +953,14 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Employee by ID",
+					"name": "Get Offender by ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -977,14 +977,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -998,7 +998,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Employee by Inv ID",
+					"name": "Get Offender by Inv ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1015,14 +1015,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1036,13 +1036,13 @@
 					"response": []
 				},
 				{
-					"name": "Create New Employee",
+					"name": "Create New Offender",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"emp_id\": 10010,\r\n    \"job_title\": \"Driver\",\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"state_id\": 10010,\r\n    \"county_id\": \"Driver\",\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1050,7 +1050,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1058,20 +1058,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee Inv CID",
+					"name": "Create New Offender Inv CID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"emp_id\": 10010,\r\n    \"job_title\": \"Driver\",\r\n    \"salary\": 45611.99,\r\n    \"country_id\": -1\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"state_id\": 10010,\r\n    \"county_id\": \"Driver\",\r\n    \"salary\": 45611.99,\r\n    \"country_id\": -1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1079,7 +1079,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1087,20 +1087,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee Inv EMPID",
+					"name": "Create New Offender Inv EMPID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"job_title\": \"Driver\",\r\n    \"emp_id\": -1,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"county_id\": \"Driver\",\r\n    \"state_id\": -1,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1108,7 +1108,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1116,20 +1116,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee No EMPID",
+					"name": "Create New Offender No EMPID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"job_title\": \"Driver\",\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"county_id\": \"Driver\",\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1137,7 +1137,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1145,20 +1145,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee No Salary",
+					"name": "Create New Offender No Salary",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"emp_id\": 10010,\r\n    \"job_title\": \"Driver\",\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"state_id\": 10010,\r\n    \"county_id\": \"Driver\",\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1166,7 +1166,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1174,20 +1174,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee No Job Title",
+					"name": "Create New Offender No Job Title",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"emp_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"state_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1195,7 +1195,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1203,20 +1203,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee Inv Job Title",
+					"name": "Create New Offender Inv Job Title",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\r\n    \"last_name\": \"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\",\r\n    \"emp_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2,\r\n    \"job_title\": \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\r\n    \"last_name\": \"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\",\r\n    \"state_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2,\r\n    \"county_id\": \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1224,7 +1224,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1232,20 +1232,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create New Employee Inv Last Name",
+					"name": "Create New Offender Inv Last Name",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"emp_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2,\r\n    \"job_title\": \"****************************************************\"\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway\",\r\n    \"state_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2,\r\n    \"county_id\": \"****************************************************\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1253,7 +1253,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/employees",
+							"raw": "http://localhost:4000/api/offenders",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1261,20 +1261,20 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees"
+								"offenders"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update Employee",
+					"name": "Update Offender",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"job_title\": \"Bus Driver\",\r\n    \"salary\": 122000.00,\r\n    \"currency_id\": 44,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"county_id\": \"Bus Driver\",\r\n    \"salary\": 122000.00,\r\n    \"currency_id\": 44,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1282,14 +1282,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1303,13 +1303,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Employee Inv Salary",
+					"name": "Update Offender Inv Salary",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"job_title\": \"Bus Driver\",\r\n    \"salary\": 0,\r\n    \"currency_id\": 44,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"county_id\": \"Bus Driver\",\r\n    \"salary\": 0,\r\n    \"currency_id\": 44,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1317,14 +1317,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1338,13 +1338,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Employee Inv CID",
+					"name": "Update Offender Inv CID",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"job_title\": \"Bus Driver\",\r\n    \"salary\": 122000.00,\r\n    \"country_id\": -1\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"county_id\": \"Bus Driver\",\r\n    \"salary\": 122000.00,\r\n    \"country_id\": -1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1352,14 +1352,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1373,13 +1373,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Employee Inv Job Title",
+					"name": "Update Offender Inv Job Title",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"job_title\": \"\",\r\n    \"salary\": 122000.00,\r\n    \"country_id\": 2\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Elway II\",\r\n    \"county_id\": \"\",\r\n    \"salary\": 122000.00,\r\n    \"country_id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1387,14 +1387,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1408,13 +1408,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Employee Inv Last Name",
+					"name": "Update Offender Inv Last Name",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n    \"employee\": {\r\n    \"first_name\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\r\n    \"last_name\": \"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\",\r\n    \"emp_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2,\r\n    \"job_title\": \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"\r\n    }\r\n}",
+							"raw": "{ \r\n    \"offender\": {\r\n    \"first_name\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\r\n    \"last_name\": \"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\",\r\n    \"state_id\": 10010,\r\n    \"salary\": 45611.99,\r\n    \"country_id\": 2,\r\n    \"county_id\": \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1422,14 +1422,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:4000/api/employees/:id",
+							"raw": "localhost:4000/api/offenders/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1443,12 +1443,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete Employee",
+					"name": "Delete Offender",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/employees/:id",
+							"raw": "http://localhost:4000/api/offenders/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1456,7 +1456,7 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [
@@ -1470,12 +1470,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete Employee Inv ID",
+					"name": "Delete Offender Inv ID",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/employees/:id",
+							"raw": "http://localhost:4000/api/offenders/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1483,7 +1483,7 @@
 							"port": "4000",
 							"path": [
 								"api",
-								"employees",
+								"offenders",
 								":id"
 							],
 							"variable": [

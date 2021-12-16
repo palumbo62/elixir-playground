@@ -19,17 +19,17 @@ defmodule Durangler.Metrics do
 
   """
   def list_salary_jobtitles do
-    q = from(e in "employees",
+    q = from(e in "offenders",
               join: c in "countries", 
               join: cr in "currencies",
               on: e.country_id == c.id,
               on: c.currency_id == cr.id,    
               select: %Durangler.Metrics.SalaryJobtitle{
-                        jobtitle: e.job_title, 
+                        jobtitle: e.county_id, 
                         avg: avg(e.salary), 
                         name: c.name, 
                         symbol: cr.symbol},
-              group_by: [e.job_title, c.name, cr.symbol])
+              group_by: [e.county_id, c.name, cr.symbol])
 
     Repo.all(q)
   end
@@ -51,19 +51,18 @@ defmodule Durangler.Metrics do
   def get_salary_by_jobtitle(id) do
     match_it = "%#{id}%"
 
-    q = from(e in "employees",
+    q = from(e in "offenders",
             join: c in "countries", 
             join: cr in "currencies",
             on: e.country_id == c.id,
             on: c.currency_id == cr.id,  
-            #where: e.job_title == ^id,  
-            where: ilike(e.job_title, ^match_it),  
+            where: ilike(e.county_id, ^match_it),  
             select: %Durangler.Metrics.SalaryJobtitle{
-                      jobtitle: e.job_title, 
+                      jobtitle: e.county_id, 
                       avg: avg(e.salary), 
                       name: c.name, 
                       symbol: cr.symbol},
-            group_by: [e.job_title, c.name, cr.symbol])
+            group_by: [e.county_id, c.name, cr.symbol])
 
    Repo.all(q)
   end
@@ -78,7 +77,7 @@ defmodule Durangler.Metrics do
 
   """
   def list_salary_countries do
-    q = from(e in "employees",
+    q = from(e in "offenders",
               join: c in "countries", 
               join: cr in "currencies",
               on: e.country_id == c.id,
@@ -108,7 +107,7 @@ defmodule Durangler.Metrics do
 
   """
   def get_salary_by_country(id) do
-    q = from(e in "employees",
+    q = from(e in "offenders",
               join: c in "countries", 
               join: cr in "currencies",
               on: e.country_id == c.id,

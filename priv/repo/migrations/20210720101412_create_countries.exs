@@ -5,7 +5,7 @@ defmodule Durangler.Repo.Migrations.CreateCountries do
     create table(:countries) do
       add :code, :string
       add :name, :string
-      add :currency_id, references(:currencies, on_delete: :nilify_all)
+      add :currency_id, references(:currencies, on_delete: :nothing)
 
       timestamps()
     end

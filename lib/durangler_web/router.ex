@@ -21,7 +21,7 @@ defmodule DuranglerWeb.Router do
     pipe_through :api
     resources "/currencies", CurrencyController, except: [:new, :edit] 
     resources "/countries", CountryController, except: [:new, :edit] 
-    resources "/employees", EmployeeController, except: [:new, :edit]
+    resources "/offenders", OffenderController, except: [:new, :edit]
   end
   
   pipeline :admin do
